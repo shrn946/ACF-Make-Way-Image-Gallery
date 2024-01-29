@@ -1,0 +1,871 @@
+@property --row {
+  syntax: "<integer>";
+  inherits: true;
+  initial-value: 1;
+}
+@property --column {
+  syntax: "<integer>";
+  inherits: true;
+  initial-value: 1;
+}
+@property --current-row {
+  syntax: "<integer>";
+  inherits: true;
+  initial-value: 1;
+}
+@property --current-column {
+  syntax: "<integer>";
+  inherits: true;
+  initial-value: 1;
+}
+:root {
+  --total-imgs: 48;
+  --images-per-row: 8;
+}
+@media (max-width: 750px) {
+  :root {
+    --images-per-row: 6;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+
+.grid {
+  perspective: 10000px;
+  perspective-origin: center;
+  transform-style: preserve-3d;
+  --current-row: calc(((var(--current-i) - 1) / var(--images-per-row) + 0.5));
+  --current-column: calc(
+  	var(--current-i) - (var(--current-row) - 1) * var(--images-per-row)
+  );
+  display: grid;
+  counter-reset: current-i var(--current-i, x) current-column var(--current-column, x) current-row var(--current-row, x) per-row var(--images-per-row, x);
+  grid-template-columns: repeat(var(--images-per-row), 1fr);
+}
+.grid:has(:nth-of-type(1) button:focus) {
+  --current-i: 1;
+}
+.grid:has(:nth-of-type(1) button:focus) .img {
+  scale: calc(var(--scale));
+  rotate: clamp( 					-10deg, 					calc(var(--scale) * var(--B) * var(--A) * -10deg), 					10deg 				);
+  translate: calc(var(--scale) * var(--B) * 6vw) calc(var(--scale) * var(--A) * 6vw);
+}
+@media (max-width: 1024px) {
+  .grid:has(:nth-of-type(1) button:focus) .img {
+    translate: calc(var(--scale) * var(--B) * 12vw) calc(var(--scale) * var(--A) * 12vw);
+  }
+}
+.grid div:nth-child(1) {
+  --i: 1;
+}
+.grid:has(:nth-of-type(2) button:focus) {
+  --current-i: 2;
+}
+.grid:has(:nth-of-type(2) button:focus) .img {
+  scale: calc(var(--scale));
+  rotate: clamp( 					-10deg, 					calc(var(--scale) * var(--B) * var(--A) * -10deg), 					10deg 				);
+  translate: calc(var(--scale) * var(--B) * 6vw) calc(var(--scale) * var(--A) * 6vw);
+}
+@media (max-width: 1024px) {
+  .grid:has(:nth-of-type(2) button:focus) .img {
+    translate: calc(var(--scale) * var(--B) * 12vw) calc(var(--scale) * var(--A) * 12vw);
+  }
+}
+.grid div:nth-child(2) {
+  --i: 2;
+}
+.grid:has(:nth-of-type(3) button:focus) {
+  --current-i: 3;
+}
+.grid:has(:nth-of-type(3) button:focus) .img {
+  scale: calc(var(--scale));
+  rotate: clamp( 					-10deg, 					calc(var(--scale) * var(--B) * var(--A) * -10deg), 					10deg 				);
+  translate: calc(var(--scale) * var(--B) * 6vw) calc(var(--scale) * var(--A) * 6vw);
+}
+@media (max-width: 1024px) {
+  .grid:has(:nth-of-type(3) button:focus) .img {
+    translate: calc(var(--scale) * var(--B) * 12vw) calc(var(--scale) * var(--A) * 12vw);
+  }
+}
+.grid div:nth-child(3) {
+  --i: 3;
+}
+.grid:has(:nth-of-type(4) button:focus) {
+  --current-i: 4;
+}
+.grid:has(:nth-of-type(4) button:focus) .img {
+  scale: calc(var(--scale));
+  rotate: clamp( 					-10deg, 					calc(var(--scale) * var(--B) * var(--A) * -10deg), 					10deg 				);
+  translate: calc(var(--scale) * var(--B) * 6vw) calc(var(--scale) * var(--A) * 6vw);
+}
+@media (max-width: 1024px) {
+  .grid:has(:nth-of-type(4) button:focus) .img {
+    translate: calc(var(--scale) * var(--B) * 12vw) calc(var(--scale) * var(--A) * 12vw);
+  }
+}
+.grid div:nth-child(4) {
+  --i: 4;
+}
+.grid:has(:nth-of-type(5) button:focus) {
+  --current-i: 5;
+}
+.grid:has(:nth-of-type(5) button:focus) .img {
+  scale: calc(var(--scale));
+  rotate: clamp( 					-10deg, 					calc(var(--scale) * var(--B) * var(--A) * -10deg), 					10deg 				);
+  translate: calc(var(--scale) * var(--B) * 6vw) calc(var(--scale) * var(--A) * 6vw);
+}
+@media (max-width: 1024px) {
+  .grid:has(:nth-of-type(5) button:focus) .img {
+    translate: calc(var(--scale) * var(--B) * 12vw) calc(var(--scale) * var(--A) * 12vw);
+  }
+}
+.grid div:nth-child(5) {
+  --i: 5;
+}
+.grid:has(:nth-of-type(6) button:focus) {
+  --current-i: 6;
+}
+.grid:has(:nth-of-type(6) button:focus) .img {
+  scale: calc(var(--scale));
+  rotate: clamp( 					-10deg, 					calc(var(--scale) * var(--B) * var(--A) * -10deg), 					10deg 				);
+  translate: calc(var(--scale) * var(--B) * 6vw) calc(var(--scale) * var(--A) * 6vw);
+}
+@media (max-width: 1024px) {
+  .grid:has(:nth-of-type(6) button:focus) .img {
+    translate: calc(var(--scale) * var(--B) * 12vw) calc(var(--scale) * var(--A) * 12vw);
+  }
+}
+.grid div:nth-child(6) {
+  --i: 6;
+}
+.grid:has(:nth-of-type(7) button:focus) {
+  --current-i: 7;
+}
+.grid:has(:nth-of-type(7) button:focus) .img {
+  scale: calc(var(--scale));
+  rotate: clamp( 					-10deg, 					calc(var(--scale) * var(--B) * var(--A) * -10deg), 					10deg 				);
+  translate: calc(var(--scale) * var(--B) * 6vw) calc(var(--scale) * var(--A) * 6vw);
+}
+@media (max-width: 1024px) {
+  .grid:has(:nth-of-type(7) button:focus) .img {
+    translate: calc(var(--scale) * var(--B) * 12vw) calc(var(--scale) * var(--A) * 12vw);
+  }
+}
+.grid div:nth-child(7) {
+  --i: 7;
+}
+.grid:has(:nth-of-type(8) button:focus) {
+  --current-i: 8;
+}
+.grid:has(:nth-of-type(8) button:focus) .img {
+  scale: calc(var(--scale));
+  rotate: clamp( 					-10deg, 					calc(var(--scale) * var(--B) * var(--A) * -10deg), 					10deg 				);
+  translate: calc(var(--scale) * var(--B) * 6vw) calc(var(--scale) * var(--A) * 6vw);
+}
+@media (max-width: 1024px) {
+  .grid:has(:nth-of-type(8) button:focus) .img {
+    translate: calc(var(--scale) * var(--B) * 12vw) calc(var(--scale) * var(--A) * 12vw);
+  }
+}
+.grid div:nth-child(8) {
+  --i: 8;
+}
+.grid:has(:nth-of-type(9) button:focus) {
+  --current-i: 9;
+}
+.grid:has(:nth-of-type(9) button:focus) .img {
+  scale: calc(var(--scale));
+  rotate: clamp( 					-10deg, 					calc(var(--scale) * var(--B) * var(--A) * -10deg), 					10deg 				);
+  translate: calc(var(--scale) * var(--B) * 6vw) calc(var(--scale) * var(--A) * 6vw);
+}
+@media (max-width: 1024px) {
+  .grid:has(:nth-of-type(9) button:focus) .img {
+    translate: calc(var(--scale) * var(--B) * 12vw) calc(var(--scale) * var(--A) * 12vw);
+  }
+}
+.grid div:nth-child(9) {
+  --i: 9;
+}
+.grid:has(:nth-of-type(10) button:focus) {
+  --current-i: 10;
+}
+.grid:has(:nth-of-type(10) button:focus) .img {
+  scale: calc(var(--scale));
+  rotate: clamp( 					-10deg, 					calc(var(--scale) * var(--B) * var(--A) * -10deg), 					10deg 				);
+  translate: calc(var(--scale) * var(--B) * 6vw) calc(var(--scale) * var(--A) * 6vw);
+}
+@media (max-width: 1024px) {
+  .grid:has(:nth-of-type(10) button:focus) .img {
+    translate: calc(var(--scale) * var(--B) * 12vw) calc(var(--scale) * var(--A) * 12vw);
+  }
+}
+.grid div:nth-child(10) {
+  --i: 10;
+}
+.grid:has(:nth-of-type(11) button:focus) {
+  --current-i: 11;
+}
+.grid:has(:nth-of-type(11) button:focus) .img {
+  scale: calc(var(--scale));
+  rotate: clamp( 					-10deg, 					calc(var(--scale) * var(--B) * var(--A) * -10deg), 					10deg 				);
+  translate: calc(var(--scale) * var(--B) * 6vw) calc(var(--scale) * var(--A) * 6vw);
+}
+@media (max-width: 1024px) {
+  .grid:has(:nth-of-type(11) button:focus) .img {
+    translate: calc(var(--scale) * var(--B) * 12vw) calc(var(--scale) * var(--A) * 12vw);
+  }
+}
+.grid div:nth-child(11) {
+  --i: 11;
+}
+.grid:has(:nth-of-type(12) button:focus) {
+  --current-i: 12;
+}
+.grid:has(:nth-of-type(12) button:focus) .img {
+  scale: calc(var(--scale));
+  rotate: clamp( 					-10deg, 					calc(var(--scale) * var(--B) * var(--A) * -10deg), 					10deg 				);
+  translate: calc(var(--scale) * var(--B) * 6vw) calc(var(--scale) * var(--A) * 6vw);
+}
+@media (max-width: 1024px) {
+  .grid:has(:nth-of-type(12) button:focus) .img {
+    translate: calc(var(--scale) * var(--B) * 12vw) calc(var(--scale) * var(--A) * 12vw);
+  }
+}
+.grid div:nth-child(12) {
+  --i: 12;
+}
+.grid:has(:nth-of-type(13) button:focus) {
+  --current-i: 13;
+}
+.grid:has(:nth-of-type(13) button:focus) .img {
+  scale: calc(var(--scale));
+  rotate: clamp( 					-10deg, 					calc(var(--scale) * var(--B) * var(--A) * -10deg), 					10deg 				);
+  translate: calc(var(--scale) * var(--B) * 6vw) calc(var(--scale) * var(--A) * 6vw);
+}
+@media (max-width: 1024px) {
+  .grid:has(:nth-of-type(13) button:focus) .img {
+    translate: calc(var(--scale) * var(--B) * 12vw) calc(var(--scale) * var(--A) * 12vw);
+  }
+}
+.grid div:nth-child(13) {
+  --i: 13;
+}
+.grid:has(:nth-of-type(14) button:focus) {
+  --current-i: 14;
+}
+.grid:has(:nth-of-type(14) button:focus) .img {
+  scale: calc(var(--scale));
+  rotate: clamp( 					-10deg, 					calc(var(--scale) * var(--B) * var(--A) * -10deg), 					10deg 				);
+  translate: calc(var(--scale) * var(--B) * 6vw) calc(var(--scale) * var(--A) * 6vw);
+}
+@media (max-width: 1024px) {
+  .grid:has(:nth-of-type(14) button:focus) .img {
+    translate: calc(var(--scale) * var(--B) * 12vw) calc(var(--scale) * var(--A) * 12vw);
+  }
+}
+.grid div:nth-child(14) {
+  --i: 14;
+}
+.grid:has(:nth-of-type(15) button:focus) {
+  --current-i: 15;
+}
+.grid:has(:nth-of-type(15) button:focus) .img {
+  scale: calc(var(--scale));
+  rotate: clamp( 					-10deg, 					calc(var(--scale) * var(--B) * var(--A) * -10deg), 					10deg 				);
+  translate: calc(var(--scale) * var(--B) * 6vw) calc(var(--scale) * var(--A) * 6vw);
+}
+@media (max-width: 1024px) {
+  .grid:has(:nth-of-type(15) button:focus) .img {
+    translate: calc(var(--scale) * var(--B) * 12vw) calc(var(--scale) * var(--A) * 12vw);
+  }
+}
+.grid div:nth-child(15) {
+  --i: 15;
+}
+.grid:has(:nth-of-type(16) button:focus) {
+  --current-i: 16;
+}
+.grid:has(:nth-of-type(16) button:focus) .img {
+  scale: calc(var(--scale));
+  rotate: clamp( 					-10deg, 					calc(var(--scale) * var(--B) * var(--A) * -10deg), 					10deg 				);
+  translate: calc(var(--scale) * var(--B) * 6vw) calc(var(--scale) * var(--A) * 6vw);
+}
+@media (max-width: 1024px) {
+  .grid:has(:nth-of-type(16) button:focus) .img {
+    translate: calc(var(--scale) * var(--B) * 12vw) calc(var(--scale) * var(--A) * 12vw);
+  }
+}
+.grid div:nth-child(16) {
+  --i: 16;
+}
+.grid:has(:nth-of-type(17) button:focus) {
+  --current-i: 17;
+}
+.grid:has(:nth-of-type(17) button:focus) .img {
+  scale: calc(var(--scale));
+  rotate: clamp( 					-10deg, 					calc(var(--scale) * var(--B) * var(--A) * -10deg), 					10deg 				);
+  translate: calc(var(--scale) * var(--B) * 6vw) calc(var(--scale) * var(--A) * 6vw);
+}
+@media (max-width: 1024px) {
+  .grid:has(:nth-of-type(17) button:focus) .img {
+    translate: calc(var(--scale) * var(--B) * 12vw) calc(var(--scale) * var(--A) * 12vw);
+  }
+}
+.grid div:nth-child(17) {
+  --i: 17;
+}
+.grid:has(:nth-of-type(18) button:focus) {
+  --current-i: 18;
+}
+.grid:has(:nth-of-type(18) button:focus) .img {
+  scale: calc(var(--scale));
+  rotate: clamp( 					-10deg, 					calc(var(--scale) * var(--B) * var(--A) * -10deg), 					10deg 				);
+  translate: calc(var(--scale) * var(--B) * 6vw) calc(var(--scale) * var(--A) * 6vw);
+}
+@media (max-width: 1024px) {
+  .grid:has(:nth-of-type(18) button:focus) .img {
+    translate: calc(var(--scale) * var(--B) * 12vw) calc(var(--scale) * var(--A) * 12vw);
+  }
+}
+.grid div:nth-child(18) {
+  --i: 18;
+}
+.grid:has(:nth-of-type(19) button:focus) {
+  --current-i: 19;
+}
+.grid:has(:nth-of-type(19) button:focus) .img {
+  scale: calc(var(--scale));
+  rotate: clamp( 					-10deg, 					calc(var(--scale) * var(--B) * var(--A) * -10deg), 					10deg 				);
+  translate: calc(var(--scale) * var(--B) * 6vw) calc(var(--scale) * var(--A) * 6vw);
+}
+@media (max-width: 1024px) {
+  .grid:has(:nth-of-type(19) button:focus) .img {
+    translate: calc(var(--scale) * var(--B) * 12vw) calc(var(--scale) * var(--A) * 12vw);
+  }
+}
+.grid div:nth-child(19) {
+  --i: 19;
+}
+.grid:has(:nth-of-type(20) button:focus) {
+  --current-i: 20;
+}
+.grid:has(:nth-of-type(20) button:focus) .img {
+  scale: calc(var(--scale));
+  rotate: clamp( 					-10deg, 					calc(var(--scale) * var(--B) * var(--A) * -10deg), 					10deg 				);
+  translate: calc(var(--scale) * var(--B) * 6vw) calc(var(--scale) * var(--A) * 6vw);
+}
+@media (max-width: 1024px) {
+  .grid:has(:nth-of-type(20) button:focus) .img {
+    translate: calc(var(--scale) * var(--B) * 12vw) calc(var(--scale) * var(--A) * 12vw);
+  }
+}
+.grid div:nth-child(20) {
+  --i: 20;
+}
+.grid:has(:nth-of-type(21) button:focus) {
+  --current-i: 21;
+}
+.grid:has(:nth-of-type(21) button:focus) .img {
+  scale: calc(var(--scale));
+  rotate: clamp( 					-10deg, 					calc(var(--scale) * var(--B) * var(--A) * -10deg), 					10deg 				);
+  translate: calc(var(--scale) * var(--B) * 6vw) calc(var(--scale) * var(--A) * 6vw);
+}
+@media (max-width: 1024px) {
+  .grid:has(:nth-of-type(21) button:focus) .img {
+    translate: calc(var(--scale) * var(--B) * 12vw) calc(var(--scale) * var(--A) * 12vw);
+  }
+}
+.grid div:nth-child(21) {
+  --i: 21;
+}
+.grid:has(:nth-of-type(22) button:focus) {
+  --current-i: 22;
+}
+.grid:has(:nth-of-type(22) button:focus) .img {
+  scale: calc(var(--scale));
+  rotate: clamp( 					-10deg, 					calc(var(--scale) * var(--B) * var(--A) * -10deg), 					10deg 				);
+  translate: calc(var(--scale) * var(--B) * 6vw) calc(var(--scale) * var(--A) * 6vw);
+}
+@media (max-width: 1024px) {
+  .grid:has(:nth-of-type(22) button:focus) .img {
+    translate: calc(var(--scale) * var(--B) * 12vw) calc(var(--scale) * var(--A) * 12vw);
+  }
+}
+.grid div:nth-child(22) {
+  --i: 22;
+}
+.grid:has(:nth-of-type(23) button:focus) {
+  --current-i: 23;
+}
+.grid:has(:nth-of-type(23) button:focus) .img {
+  scale: calc(var(--scale));
+  rotate: clamp( 					-10deg, 					calc(var(--scale) * var(--B) * var(--A) * -10deg), 					10deg 				);
+  translate: calc(var(--scale) * var(--B) * 6vw) calc(var(--scale) * var(--A) * 6vw);
+}
+@media (max-width: 1024px) {
+  .grid:has(:nth-of-type(23) button:focus) .img {
+    translate: calc(var(--scale) * var(--B) * 12vw) calc(var(--scale) * var(--A) * 12vw);
+  }
+}
+.grid div:nth-child(23) {
+  --i: 23;
+}
+.grid:has(:nth-of-type(24) button:focus) {
+  --current-i: 24;
+}
+.grid:has(:nth-of-type(24) button:focus) .img {
+  scale: calc(var(--scale));
+  rotate: clamp( 					-10deg, 					calc(var(--scale) * var(--B) * var(--A) * -10deg), 					10deg 				);
+  translate: calc(var(--scale) * var(--B) * 6vw) calc(var(--scale) * var(--A) * 6vw);
+}
+@media (max-width: 1024px) {
+  .grid:has(:nth-of-type(24) button:focus) .img {
+    translate: calc(var(--scale) * var(--B) * 12vw) calc(var(--scale) * var(--A) * 12vw);
+  }
+}
+.grid div:nth-child(24) {
+  --i: 24;
+}
+.grid:has(:nth-of-type(25) button:focus) {
+  --current-i: 25;
+}
+.grid:has(:nth-of-type(25) button:focus) .img {
+  scale: calc(var(--scale));
+  rotate: clamp( 					-10deg, 					calc(var(--scale) * var(--B) * var(--A) * -10deg), 					10deg 				);
+  translate: calc(var(--scale) * var(--B) * 6vw) calc(var(--scale) * var(--A) * 6vw);
+}
+@media (max-width: 1024px) {
+  .grid:has(:nth-of-type(25) button:focus) .img {
+    translate: calc(var(--scale) * var(--B) * 12vw) calc(var(--scale) * var(--A) * 12vw);
+  }
+}
+.grid div:nth-child(25) {
+  --i: 25;
+}
+.grid:has(:nth-of-type(26) button:focus) {
+  --current-i: 26;
+}
+.grid:has(:nth-of-type(26) button:focus) .img {
+  scale: calc(var(--scale));
+  rotate: clamp( 					-10deg, 					calc(var(--scale) * var(--B) * var(--A) * -10deg), 					10deg 				);
+  translate: calc(var(--scale) * var(--B) * 6vw) calc(var(--scale) * var(--A) * 6vw);
+}
+@media (max-width: 1024px) {
+  .grid:has(:nth-of-type(26) button:focus) .img {
+    translate: calc(var(--scale) * var(--B) * 12vw) calc(var(--scale) * var(--A) * 12vw);
+  }
+}
+.grid div:nth-child(26) {
+  --i: 26;
+}
+.grid:has(:nth-of-type(27) button:focus) {
+  --current-i: 27;
+}
+.grid:has(:nth-of-type(27) button:focus) .img {
+  scale: calc(var(--scale));
+  rotate: clamp( 					-10deg, 					calc(var(--scale) * var(--B) * var(--A) * -10deg), 					10deg 				);
+  translate: calc(var(--scale) * var(--B) * 6vw) calc(var(--scale) * var(--A) * 6vw);
+}
+@media (max-width: 1024px) {
+  .grid:has(:nth-of-type(27) button:focus) .img {
+    translate: calc(var(--scale) * var(--B) * 12vw) calc(var(--scale) * var(--A) * 12vw);
+  }
+}
+.grid div:nth-child(27) {
+  --i: 27;
+}
+.grid:has(:nth-of-type(28) button:focus) {
+  --current-i: 28;
+}
+.grid:has(:nth-of-type(28) button:focus) .img {
+  scale: calc(var(--scale));
+  rotate: clamp( 					-10deg, 					calc(var(--scale) * var(--B) * var(--A) * -10deg), 					10deg 				);
+  translate: calc(var(--scale) * var(--B) * 6vw) calc(var(--scale) * var(--A) * 6vw);
+}
+@media (max-width: 1024px) {
+  .grid:has(:nth-of-type(28) button:focus) .img {
+    translate: calc(var(--scale) * var(--B) * 12vw) calc(var(--scale) * var(--A) * 12vw);
+  }
+}
+.grid div:nth-child(28) {
+  --i: 28;
+}
+.grid:has(:nth-of-type(29) button:focus) {
+  --current-i: 29;
+}
+.grid:has(:nth-of-type(29) button:focus) .img {
+  scale: calc(var(--scale));
+  rotate: clamp( 					-10deg, 					calc(var(--scale) * var(--B) * var(--A) * -10deg), 					10deg 				);
+  translate: calc(var(--scale) * var(--B) * 6vw) calc(var(--scale) * var(--A) * 6vw);
+}
+@media (max-width: 1024px) {
+  .grid:has(:nth-of-type(29) button:focus) .img {
+    translate: calc(var(--scale) * var(--B) * 12vw) calc(var(--scale) * var(--A) * 12vw);
+  }
+}
+.grid div:nth-child(29) {
+  --i: 29;
+}
+.grid:has(:nth-of-type(30) button:focus) {
+  --current-i: 30;
+}
+.grid:has(:nth-of-type(30) button:focus) .img {
+  scale: calc(var(--scale));
+  rotate: clamp( 					-10deg, 					calc(var(--scale) * var(--B) * var(--A) * -10deg), 					10deg 				);
+  translate: calc(var(--scale) * var(--B) * 6vw) calc(var(--scale) * var(--A) * 6vw);
+}
+@media (max-width: 1024px) {
+  .grid:has(:nth-of-type(30) button:focus) .img {
+    translate: calc(var(--scale) * var(--B) * 12vw) calc(var(--scale) * var(--A) * 12vw);
+  }
+}
+.grid div:nth-child(30) {
+  --i: 30;
+}
+.grid:has(:nth-of-type(31) button:focus) {
+  --current-i: 31;
+}
+.grid:has(:nth-of-type(31) button:focus) .img {
+  scale: calc(var(--scale));
+  rotate: clamp( 					-10deg, 					calc(var(--scale) * var(--B) * var(--A) * -10deg), 					10deg 				);
+  translate: calc(var(--scale) * var(--B) * 6vw) calc(var(--scale) * var(--A) * 6vw);
+}
+@media (max-width: 1024px) {
+  .grid:has(:nth-of-type(31) button:focus) .img {
+    translate: calc(var(--scale) * var(--B) * 12vw) calc(var(--scale) * var(--A) * 12vw);
+  }
+}
+.grid div:nth-child(31) {
+  --i: 31;
+}
+.grid:has(:nth-of-type(32) button:focus) {
+  --current-i: 32;
+}
+.grid:has(:nth-of-type(32) button:focus) .img {
+  scale: calc(var(--scale));
+  rotate: clamp( 					-10deg, 					calc(var(--scale) * var(--B) * var(--A) * -10deg), 					10deg 				);
+  translate: calc(var(--scale) * var(--B) * 6vw) calc(var(--scale) * var(--A) * 6vw);
+}
+@media (max-width: 1024px) {
+  .grid:has(:nth-of-type(32) button:focus) .img {
+    translate: calc(var(--scale) * var(--B) * 12vw) calc(var(--scale) * var(--A) * 12vw);
+  }
+}
+.grid div:nth-child(32) {
+  --i: 32;
+}
+.grid:has(:nth-of-type(33) button:focus) {
+  --current-i: 33;
+}
+.grid:has(:nth-of-type(33) button:focus) .img {
+  scale: calc(var(--scale));
+  rotate: clamp( 					-10deg, 					calc(var(--scale) * var(--B) * var(--A) * -10deg), 					10deg 				);
+  translate: calc(var(--scale) * var(--B) * 6vw) calc(var(--scale) * var(--A) * 6vw);
+}
+@media (max-width: 1024px) {
+  .grid:has(:nth-of-type(33) button:focus) .img {
+    translate: calc(var(--scale) * var(--B) * 12vw) calc(var(--scale) * var(--A) * 12vw);
+  }
+}
+.grid div:nth-child(33) {
+  --i: 33;
+}
+.grid:has(:nth-of-type(34) button:focus) {
+  --current-i: 34;
+}
+.grid:has(:nth-of-type(34) button:focus) .img {
+  scale: calc(var(--scale));
+  rotate: clamp( 					-10deg, 					calc(var(--scale) * var(--B) * var(--A) * -10deg), 					10deg 				);
+  translate: calc(var(--scale) * var(--B) * 6vw) calc(var(--scale) * var(--A) * 6vw);
+}
+@media (max-width: 1024px) {
+  .grid:has(:nth-of-type(34) button:focus) .img {
+    translate: calc(var(--scale) * var(--B) * 12vw) calc(var(--scale) * var(--A) * 12vw);
+  }
+}
+.grid div:nth-child(34) {
+  --i: 34;
+}
+.grid:has(:nth-of-type(35) button:focus) {
+  --current-i: 35;
+}
+.grid:has(:nth-of-type(35) button:focus) .img {
+  scale: calc(var(--scale));
+  rotate: clamp( 					-10deg, 					calc(var(--scale) * var(--B) * var(--A) * -10deg), 					10deg 				);
+  translate: calc(var(--scale) * var(--B) * 6vw) calc(var(--scale) * var(--A) * 6vw);
+}
+@media (max-width: 1024px) {
+  .grid:has(:nth-of-type(35) button:focus) .img {
+    translate: calc(var(--scale) * var(--B) * 12vw) calc(var(--scale) * var(--A) * 12vw);
+  }
+}
+.grid div:nth-child(35) {
+  --i: 35;
+}
+.grid:has(:nth-of-type(36) button:focus) {
+  --current-i: 36;
+}
+.grid:has(:nth-of-type(36) button:focus) .img {
+  scale: calc(var(--scale));
+  rotate: clamp( 					-10deg, 					calc(var(--scale) * var(--B) * var(--A) * -10deg), 					10deg 				);
+  translate: calc(var(--scale) * var(--B) * 6vw) calc(var(--scale) * var(--A) * 6vw);
+}
+@media (max-width: 1024px) {
+  .grid:has(:nth-of-type(36) button:focus) .img {
+    translate: calc(var(--scale) * var(--B) * 12vw) calc(var(--scale) * var(--A) * 12vw);
+  }
+}
+.grid div:nth-child(36) {
+  --i: 36;
+}
+.grid:has(:nth-of-type(37) button:focus) {
+  --current-i: 37;
+}
+.grid:has(:nth-of-type(37) button:focus) .img {
+  scale: calc(var(--scale));
+  rotate: clamp( 					-10deg, 					calc(var(--scale) * var(--B) * var(--A) * -10deg), 					10deg 				);
+  translate: calc(var(--scale) * var(--B) * 6vw) calc(var(--scale) * var(--A) * 6vw);
+}
+@media (max-width: 1024px) {
+  .grid:has(:nth-of-type(37) button:focus) .img {
+    translate: calc(var(--scale) * var(--B) * 12vw) calc(var(--scale) * var(--A) * 12vw);
+  }
+}
+.grid div:nth-child(37) {
+  --i: 37;
+}
+.grid:has(:nth-of-type(38) button:focus) {
+  --current-i: 38;
+}
+.grid:has(:nth-of-type(38) button:focus) .img {
+  scale: calc(var(--scale));
+  rotate: clamp( 					-10deg, 					calc(var(--scale) * var(--B) * var(--A) * -10deg), 					10deg 				);
+  translate: calc(var(--scale) * var(--B) * 6vw) calc(var(--scale) * var(--A) * 6vw);
+}
+@media (max-width: 1024px) {
+  .grid:has(:nth-of-type(38) button:focus) .img {
+    translate: calc(var(--scale) * var(--B) * 12vw) calc(var(--scale) * var(--A) * 12vw);
+  }
+}
+.grid div:nth-child(38) {
+  --i: 38;
+}
+.grid:has(:nth-of-type(39) button:focus) {
+  --current-i: 39;
+}
+.grid:has(:nth-of-type(39) button:focus) .img {
+  scale: calc(var(--scale));
+  rotate: clamp( 					-10deg, 					calc(var(--scale) * var(--B) * var(--A) * -10deg), 					10deg 				);
+  translate: calc(var(--scale) * var(--B) * 6vw) calc(var(--scale) * var(--A) * 6vw);
+}
+@media (max-width: 1024px) {
+  .grid:has(:nth-of-type(39) button:focus) .img {
+    translate: calc(var(--scale) * var(--B) * 12vw) calc(var(--scale) * var(--A) * 12vw);
+  }
+}
+.grid div:nth-child(39) {
+  --i: 39;
+}
+.grid:has(:nth-of-type(40) button:focus) {
+  --current-i: 40;
+}
+.grid:has(:nth-of-type(40) button:focus) .img {
+  scale: calc(var(--scale));
+  rotate: clamp( 					-10deg, 					calc(var(--scale) * var(--B) * var(--A) * -10deg), 					10deg 				);
+  translate: calc(var(--scale) * var(--B) * 6vw) calc(var(--scale) * var(--A) * 6vw);
+}
+@media (max-width: 1024px) {
+  .grid:has(:nth-of-type(40) button:focus) .img {
+    translate: calc(var(--scale) * var(--B) * 12vw) calc(var(--scale) * var(--A) * 12vw);
+  }
+}
+.grid div:nth-child(40) {
+  --i: 40;
+}
+.grid:has(:nth-of-type(41) button:focus) {
+  --current-i: 41;
+}
+.grid:has(:nth-of-type(41) button:focus) .img {
+  scale: calc(var(--scale));
+  rotate: clamp( 					-10deg, 					calc(var(--scale) * var(--B) * var(--A) * -10deg), 					10deg 				);
+  translate: calc(var(--scale) * var(--B) * 6vw) calc(var(--scale) * var(--A) * 6vw);
+}
+@media (max-width: 1024px) {
+  .grid:has(:nth-of-type(41) button:focus) .img {
+    translate: calc(var(--scale) * var(--B) * 12vw) calc(var(--scale) * var(--A) * 12vw);
+  }
+}
+.grid div:nth-child(41) {
+  --i: 41;
+}
+.grid:has(:nth-of-type(42) button:focus) {
+  --current-i: 42;
+}
+.grid:has(:nth-of-type(42) button:focus) .img {
+  scale: calc(var(--scale));
+  rotate: clamp( 					-10deg, 					calc(var(--scale) * var(--B) * var(--A) * -10deg), 					10deg 				);
+  translate: calc(var(--scale) * var(--B) * 6vw) calc(var(--scale) * var(--A) * 6vw);
+}
+@media (max-width: 1024px) {
+  .grid:has(:nth-of-type(42) button:focus) .img {
+    translate: calc(var(--scale) * var(--B) * 12vw) calc(var(--scale) * var(--A) * 12vw);
+  }
+}
+.grid div:nth-child(42) {
+  --i: 42;
+}
+.grid:has(:nth-of-type(43) button:focus) {
+  --current-i: 43;
+}
+.grid:has(:nth-of-type(43) button:focus) .img {
+  scale: calc(var(--scale));
+  rotate: clamp( 					-10deg, 					calc(var(--scale) * var(--B) * var(--A) * -10deg), 					10deg 				);
+  translate: calc(var(--scale) * var(--B) * 6vw) calc(var(--scale) * var(--A) * 6vw);
+}
+@media (max-width: 1024px) {
+  .grid:has(:nth-of-type(43) button:focus) .img {
+    translate: calc(var(--scale) * var(--B) * 12vw) calc(var(--scale) * var(--A) * 12vw);
+  }
+}
+.grid div:nth-child(43) {
+  --i: 43;
+}
+.grid:has(:nth-of-type(44) button:focus) {
+  --current-i: 44;
+}
+.grid:has(:nth-of-type(44) button:focus) .img {
+  scale: calc(var(--scale));
+  rotate: clamp( 					-10deg, 					calc(var(--scale) * var(--B) * var(--A) * -10deg), 					10deg 				);
+  translate: calc(var(--scale) * var(--B) * 6vw) calc(var(--scale) * var(--A) * 6vw);
+}
+@media (max-width: 1024px) {
+  .grid:has(:nth-of-type(44) button:focus) .img {
+    translate: calc(var(--scale) * var(--B) * 12vw) calc(var(--scale) * var(--A) * 12vw);
+  }
+}
+.grid div:nth-child(44) {
+  --i: 44;
+}
+.grid:has(:nth-of-type(45) button:focus) {
+  --current-i: 45;
+}
+.grid:has(:nth-of-type(45) button:focus) .img {
+  scale: calc(var(--scale));
+  rotate: clamp( 					-10deg, 					calc(var(--scale) * var(--B) * var(--A) * -10deg), 					10deg 				);
+  translate: calc(var(--scale) * var(--B) * 6vw) calc(var(--scale) * var(--A) * 6vw);
+}
+@media (max-width: 1024px) {
+  .grid:has(:nth-of-type(45) button:focus) .img {
+    translate: calc(var(--scale) * var(--B) * 12vw) calc(var(--scale) * var(--A) * 12vw);
+  }
+}
+.grid div:nth-child(45) {
+  --i: 45;
+}
+.grid:has(:nth-of-type(46) button:focus) {
+  --current-i: 46;
+}
+.grid:has(:nth-of-type(46) button:focus) .img {
+  scale: calc(var(--scale));
+  rotate: clamp( 					-10deg, 					calc(var(--scale) * var(--B) * var(--A) * -10deg), 					10deg 				);
+  translate: calc(var(--scale) * var(--B) * 6vw) calc(var(--scale) * var(--A) * 6vw);
+}
+@media (max-width: 1024px) {
+  .grid:has(:nth-of-type(46) button:focus) .img {
+    translate: calc(var(--scale) * var(--B) * 12vw) calc(var(--scale) * var(--A) * 12vw);
+  }
+}
+.grid div:nth-child(46) {
+  --i: 46;
+}
+.grid:has(:nth-of-type(47) button:focus) {
+  --current-i: 47;
+}
+.grid:has(:nth-of-type(47) button:focus) .img {
+  scale: calc(var(--scale));
+  rotate: clamp( 					-10deg, 					calc(var(--scale) * var(--B) * var(--A) * -10deg), 					10deg 				);
+  translate: calc(var(--scale) * var(--B) * 6vw) calc(var(--scale) * var(--A) * 6vw);
+}
+@media (max-width: 1024px) {
+  .grid:has(:nth-of-type(47) button:focus) .img {
+    translate: calc(var(--scale) * var(--B) * 12vw) calc(var(--scale) * var(--A) * 12vw);
+  }
+}
+.grid div:nth-child(47) {
+  --i: 47;
+}
+.grid:has(:nth-of-type(48) button:focus) {
+  --current-i: 48;
+}
+.grid:has(:nth-of-type(48) button:focus) .img {
+  scale: calc(var(--scale));
+  rotate: clamp( 					-10deg, 					calc(var(--scale) * var(--B) * var(--A) * -10deg), 					10deg 				);
+  translate: calc(var(--scale) * var(--B) * 6vw) calc(var(--scale) * var(--A) * 6vw);
+}
+@media (max-width: 1024px) {
+  .grid:has(:nth-of-type(48) button:focus) .img {
+    translate: calc(var(--scale) * var(--B) * 12vw) calc(var(--scale) * var(--A) * 12vw);
+  }
+}
+.grid div:nth-child(48) {
+  --i: 48;
+}
+.grid .img:hover {
+  scale: 1.05;
+  transform: translateZ(100px);
+}
+
+.img {
+  position: relative;
+  transition: scale 0.4s 0.05s ease-out, rotate 0.4s 0.05s ease-out;
+  --row: calc(((var(--i) - 1) / var(--images-per-row) + 0.5));
+  --column: calc(var(--i) - (var(--row) - 1) * var(--images-per-row));
+  --A: calc(var(--row) - var(--current-row));
+  --B: calc(var(--column) - var(--current-column));
+  --distance: calc(var(--A) * var(--A) + var(--B) * var(--B) / 2);
+  counter-reset: distance var(--distance) a var(--A, x) b var(--B, x);
+  --scale: max((var(--images-per-row) * 2 - var(--distance)) / 16, 0.75);
+  transition: scale 0.5s cubic-bezier(0.5, 0, 0.2, 1), rotate 0.5s cubic-bezier(0.5, 0, 0.2, 1), translate 0.5s cubic-bezier(0.5, 0, 0.2, 1), transform 0.5s cubic-bezier(0.5, 0, 0.2, 1);
+}
+.img:focus-within {
+  z-index: 2;
+  scale: 2 !important;
+  animation: make-way 0.6s cubic-bezier(0.5, 0, 0.2, 1) forwards;
+}
+.img button {
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+.img button:focus {
+  outline: none;
+}
+
+.grid img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4/6;
+  object-fit: cover;
+}
+
+@keyframes make-way {
+  0% {
+    transform: translateZ(100px);
+    z-index: 1;
+  }
+  20% {
+    transform: rotateX(35deg) rotateY(15deg) translateZ(100px);
+  }
+  60% {
+    transform: rotateX(-5deg) rotateY(0) translateZ(100px);
+  }
+  100% {
+    transform: translateZ(100px);
+    z-index: 1;
+  }
+}
